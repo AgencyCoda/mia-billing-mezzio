@@ -93,7 +93,7 @@ class ListHandler extends \Mia\Auth\Request\MiaAuthRequestHandler
         $user = $this->getUser($request);
         // Configurar query
         $configure = new \Mia\Database\Query\Configure($this, $request);
-        $configure->addWhere('user_id', $$user->id);
+        $configure->addWhere('user_id', $user->id);
         // Obtenemos información
         $rows = \Mia\Billing\Repository\MiaBillingInfoRepository::fetchByConfigure($configure);
         // Devolvemos respuesta
