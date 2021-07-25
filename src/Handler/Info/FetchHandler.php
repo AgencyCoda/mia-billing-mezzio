@@ -38,10 +38,12 @@ class FetchHandler extends \Mia\Auth\Request\MiaAuthRequestHandler
      */
     public function handle(\Psr\Http\Message\ServerRequestInterface $request): \Psr\Http\Message\ResponseInterface
     {
+        // Get Current User
+        $user = $this->getUser($request);
         // Obtenemos ID si fue enviado
         $itemId = $this->getParam($request, 'id', '');
         // Buscar si existe el tour en la DB
-        $item = \Mia\Billing\Model\MiaBillingInfo::find($itemId);
+        $item = \Mia\Billing\Model\MiaBillingInfo::where('id', $itemId)->where('user_id', $user->id)->first();
         // verificar si existe
         if($item === null){
             throw new MiaException('Not exist item');
