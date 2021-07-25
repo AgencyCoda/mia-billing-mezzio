@@ -80,7 +80,9 @@ class SaveHandler extends \Mia\Auth\Request\MiaAuthRequestHandler
         $item = \Mia\Billing\Model\MiaBillingInfo::where('id', $itemId)->where('user_id', $user->id)->first();
         // verificar si existe
         if($item === null){
-            return new \Mia\Billing\Model\MiaBillingInfo();
+            $item = new \Mia\Billing\Model\MiaBillingInfo(); 
+            $item->user_id = $user->id;
+            return $item;
         }
         // Devolvemos item para editar
         return $item;
