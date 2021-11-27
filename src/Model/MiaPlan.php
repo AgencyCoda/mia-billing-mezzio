@@ -75,7 +75,7 @@ class MiaPlan extends \Illuminate\Database\Eloquent\Model
 {
     protected $table = 'mia_plan';
     
-    //protected $casts = ['data' => 'array'];
+    protected $casts = ['data' => 'array'];
     /**
      * Indicates if the model should be timestamped.
      *

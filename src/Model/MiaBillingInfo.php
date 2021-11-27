@@ -121,9 +121,12 @@ namespace Mia\Billing\Model;
  */
 class MiaBillingInfo extends \Illuminate\Database\Eloquent\Model
 {
+    const PROVIDER_MERCADOPAGO = 0;
+    const PROVIDER_PAYPAL = 1;
+
     protected $table = 'mia_billing_info';
     
-    //protected $casts = ['data' => 'array'];
+    protected $casts = ['data' => 'array'];
     /**
      * Indicates if the model should be timestamped.
      *
