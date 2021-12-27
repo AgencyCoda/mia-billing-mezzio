@@ -123,6 +123,7 @@ class MiaBillingInfo extends \Illuminate\Database\Eloquent\Model
 {
     const PROVIDER_MERCADOPAGO = 0;
     const PROVIDER_PAYPAL = 1;
+    const PROVIDER_FREE = 2;
 
     protected $table = 'mia_billing_info';
     

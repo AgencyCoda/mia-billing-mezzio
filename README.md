@@ -8,8 +8,9 @@
     $app->route('/mia-billing-info/save', [\Mia\Auth\Handler\AuthHandler::class, \Mia\Billing\Handler\Info\SaveHandler::class], ['POST', 'OPTIONS', 'HEAD'], 'mia_billing_info.save');
 
 
-    $app->route('/mia_plan/fetch/{id}', [\Mia\Auth\Handler\AuthHandler::class, \Mia\Billing\Handler\Plan\FetchHandler::class], ['GET', 'OPTIONS', 'HEAD'], 'mia_plan.fetch');
+    $app->route('/mia-plan/me', [\Mia\Auth\Handler\AuthHandler::class, \Mia\Billing\Handler\Plan\MeHandler::class], ['GET', 'OPTIONS', 'HEAD'], 'mia_plan.me');
+    $app->route('/mia-plan/fetch/{id}', [\Mia\Auth\Handler\AuthHandler::class, \Mia\Billing\Handler\Plan\FetchHandler::class], ['GET', 'OPTIONS', 'HEAD'], 'mia_plan.fetch');
     $app->route('/mia-plan/fetch-slug/{slug}', [\Mia\Billing\Handler\Plan\FetchSlugHandler::class], ['GET', 'OPTIONS', 'HEAD'], 'mia_plan.fetch-slug');
-    $app->route('/mia_plan/list', [\Mia\Auth\Handler\AuthHandler::class, \Mia\Billing\Handler\Plan\ListHandler::class], ['POST', 'OPTIONS', 'HEAD'], 'mia_plan.list');
-    $app->route('/mia_plan/remove/{id}', [\Mia\Auth\Handler\AuthHandler::class, \Mia\Billing\Handler\Plan\RemoveHandler::class], ['GET', 'DELETE', 'OPTIONS', 'HEAD'], 'mia_plan.remove');
-    $app->route('/mia_plan/save', [\Mia\Auth\Handler\AuthHandler::class, \Mia\Billing\Handler\Plan\SaveHandler::class], ['POST', 'OPTIONS', 'HEAD'], 'mia_plan.save');
+    $app->route('/mia-plan/list', [\Mia\Auth\Handler\AuthHandler::class, \Mia\Billing\Handler\Plan\ListHandler::class], ['POST', 'OPTIONS', 'HEAD'], 'mia_plan.list');
+    $app->route('/mia-plan/remove/{id}', [\Mia\Auth\Handler\AuthHandler::class, \Mia\Billing\Handler\Plan\RemoveHandler::class], ['GET', 'DELETE', 'OPTIONS', 'HEAD'], 'mia_plan.remove');
+    $app->route('/mia-plan/save', [\Mia\Auth\Handler\AuthHandler::class, \Mia\Billing\Handler\Plan\SaveHandler::class], ['POST', 'OPTIONS', 'HEAD'], 'mia_plan.save');
