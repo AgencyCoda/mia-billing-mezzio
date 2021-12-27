@@ -9,6 +9,8 @@
 
 
     $app->route('/mia-plan/me', [\Mia\Auth\Handler\AuthHandler::class, \Mia\Billing\Handler\Plan\MeHandler::class], ['GET', 'OPTIONS', 'HEAD'], 'mia_plan.me');
+    $app->route('/mia-plan/history/list', [\Mia\Auth\Handler\AuthHandler::class, \Mia\Billing\Handler\Plan\ListByUserHandler::class], ['POST', 'OPTIONS', 'HEAD'], 'mia_plan.list-history');
+
     $app->route('/mia-plan/fetch/{id}', [\Mia\Auth\Handler\AuthHandler::class, \Mia\Billing\Handler\Plan\FetchHandler::class], ['GET', 'OPTIONS', 'HEAD'], 'mia_plan.fetch');
     $app->route('/mia-plan/fetch-slug/{slug}', [\Mia\Billing\Handler\Plan\FetchSlugHandler::class], ['GET', 'OPTIONS', 'HEAD'], 'mia_plan.fetch-slug');
     $app->route('/mia-plan/list', [\Mia\Auth\Handler\AuthHandler::class, \Mia\Billing\Handler\Plan\ListHandler::class], ['POST', 'OPTIONS', 'HEAD'], 'mia_plan.list');
